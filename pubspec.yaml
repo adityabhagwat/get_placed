@@ -38,6 +38,8 @@ dependencies:
   #Google Icon
   font_awesome_flutter: ^9.0.0
 
+  email_validator: ^2.0.1
+
   #state Management
   provider: ^5.0.0
 

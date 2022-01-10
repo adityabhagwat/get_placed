@@ -1,6 +1,7 @@
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get_placed/provider/google_sign_in.dart';
 import 'package:provider/provider.dart';
 import 'provider/google_sign_in.dart';
@@ -15,23 +16,19 @@ class _gp_loginState extends State<gp_login> {
   Widget build(BuildContext context) {
 
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('getPlaced'),
+        elevation: 10,
+        backgroundColor: Colors.lightBlueAccent,
+        leading: Image.asset('lib/images/gPapplogo.jpg'),
+        ),
       body: Stack(
         children: <Widget>[
           Container(
             height: double.infinity,
             width: double.infinity,
             decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Colors.lightBlueAccent,
-                  Colors.lightBlue,
-                  Colors.blue,
-                  Colors.blueAccent,
-                ],
-                stops: [0.1,0.3,0.7,0.9],
-              ),
+              color: Colors.white,
             ),
           ),
           Container(
@@ -40,39 +37,39 @@ class _gp_loginState extends State<gp_login> {
               physics: const AlwaysScrollableScrollPhysics(),
               padding: const EdgeInsets.symmetric(
                 horizontal: 20.0,
-                vertical: 120.0,
+                vertical: 10.0,
               ),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             const Text(
-            'Sign In',
+            'WELCOME',
             style: TextStyle(
               fontSize: 26,
               fontWeight: FontWeight.bold,
-              color: Colors.black,
+              color: Colors.lightBlue,
             ),
           ),
           const SizedBox(height: 30,),
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               boxShadow:[
                 BoxShadow(
-                  color: Colors.black,
-                  blurRadius: 100,
+                  color: Colors.lightBlueAccent,
+                  blurRadius: 200,
                 )
               ]
             ),
-            child: const TextField(
-              decoration: InputDecoration(
-                fillColor: Colors.lightBlueAccent,
+            child: TextFormField(
+              decoration: const InputDecoration(
+                fillColor: Colors.white,
                 filled: true,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(5.0)),
                   borderSide: BorderSide.none,
                 ),
                 icon: Icon(Icons.email_outlined,
-                color: Colors.white,),
+                color: Colors.blue,),
                 hintText: 'Email',
                 focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(5.0)),
@@ -83,25 +80,25 @@ class _gp_loginState extends State<gp_login> {
           ),
             const SizedBox(height: 30,),
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   boxShadow:[
                     BoxShadow(
-                      color: Colors.black,
-                      blurRadius: 100,
+                      color: Colors.lightBlueAccent,
+                      blurRadius: 200,
                     )
                   ]
               ),
               child: const TextField(
                 obscureText: true,
                 decoration: InputDecoration(
-                  fillColor: Colors.lightBlueAccent,
+                  fillColor: Colors.white,
                   filled: true,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(5.0)),
                     borderSide: BorderSide.none,
                   ),
                   icon: Icon(Icons.vpn_key_outlined,
-                    color: Colors.white,),
+                    color: Colors.blue,),
                   hintText: 'Password',
                   focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(5.0)),
@@ -116,7 +113,7 @@ class _gp_loginState extends State<gp_login> {
                 child: const Text(
                   'Forgot Password ?',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.blue,
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
@@ -129,12 +126,14 @@ class _gp_loginState extends State<gp_login> {
               child:ElevatedButton(
                 onPressed:() {},
                 style: ElevatedButton.styleFrom(
+                  elevation: 20,
+                  shadowColor: Colors.lightBlueAccent,
                   onPrimary: Colors.black87,
-                  primary: Colors.lightGreenAccent,
+                  primary: Colors.white,
                   minimumSize: const Size(88, 36),
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(2)),
+                    borderRadius: BorderRadius.all(Radius.circular(5.0)),
                   ),
 
                 ),
@@ -143,7 +142,7 @@ class _gp_loginState extends State<gp_login> {
                   style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: Colors.blue,
                   ),
                 ),
 
@@ -226,6 +225,17 @@ class _gp_loginState extends State<gp_login> {
                   ],
                 ),
               ],
+            ),
+            const SizedBox(height: 20,),
+              TextButton(
+                onPressed: () {},
+                child: const Text(
+                  'New User ? Click Here to Sign Up',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                  ),
+                ),
             ),
 ]
       ),

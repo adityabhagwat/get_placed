@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:get_placed/login_page.dart';
 import 'package:get_placed/provider/google_sign_in.dart';
+import 'package:get_placed/registration_form.dart';
 import 'package:provider/provider.dart';
-import 'gp_login.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -46,7 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   _naviagtetologin() async{
     await Future.delayed(Duration(seconds: 10),() {});
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>gp_login()));
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginPage()));
   }
 
   @override

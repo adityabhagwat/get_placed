@@ -85,6 +85,7 @@ flutter:
      - lib/images/gPlogo.png
      - lib/images/google_logo.png
      - lib/images/fb_logo.png
+     - lib/images/sidebar_bg.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -1,0 +1,17 @@
+<application>
+  <component name="deviceManagerPhysicalTab">
+    <physicalDevices>
+      <PhysicalDevice>
+        <key>
+          <Key>
+            <type value="DOMAIN_NAME" />
+            <value value="adb-e78fdabb-7sEFgP._adb-tls-connect._tcp" />
+          </Key>
+        </key>
+        <name value="OnePlus AC2001" />
+        <target value="Android 11.0" />
+        <api value="30" />
+      </PhysicalDevice>
+    </physicalDevices>
+  </component>
+</application>

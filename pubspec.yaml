@@ -51,6 +51,9 @@ dependencies:
 
   google_fonts: ^2.2.0
 
+  image_picker: ^0.8.4+10
+  firestore_search: ^0.1.9
+  url_launcher: ^6.0.20
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -86,6 +89,7 @@ flutter:
      - lib/images/google_logo.png
      - lib/images/fb_logo.png
      - lib/images/sidebar_bg.jpg
+     - lib/images/outline_account_circle_black_24dp.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

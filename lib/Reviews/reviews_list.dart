@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'reviews_const.dart';
 
 
@@ -84,11 +85,12 @@ class ReviewCard extends StatelessWidget {
             RichText(
                 text: TextSpan(
                     children: <TextSpan>[
-                      const TextSpan(text: "Questions : ", style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontStyle: FontStyle.italic,
-                        color: Colors.black)
-                      ),
+                      const TextSpan(
+                  text: "Topics to Prepare : ",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontStyle: FontStyle.italic,
+                      color: Colors.black)),
                       TextSpan(text: review!.questions,style: TextStyle(color: Colors.black)),
                     ]
                 )

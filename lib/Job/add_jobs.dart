@@ -90,13 +90,13 @@ class _AddJobsListState extends State<AddJobsList> {
                       // Call the user's CollectionReference to add a new user
                       return jobs
                           .add({
-                        "Company Name": companyName,
-                        "Designation": designation,
-                        "description":description,
-                        "job_link":link,
-                        "date":date.toString(),
-                      })
-                          .then((value) => print("Review Added"))
+                            "Company Name": companyName,
+                            "Designation": designation,
+                            "description": description,
+                            "job_link": link,
+                            "date": date.toString(),
+                          })
+                          .then((value) => print("Job Added"))
                           .catchError((error) => print("Failed to add Review: $error"));
                     }
 

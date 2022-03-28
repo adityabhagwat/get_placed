@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/material.dart';
 import 'package:firestore_search/firestore_search.dart';
+import 'package:flutter/material.dart';
 import 'package:get_placed/Company/company_const.dart';
+import 'package:get_placed/Company/reviews_by_company.dart';
 
 class SearchCompanies extends StatelessWidget {
   const SearchCompanies({Key? key}) : super(key: key);
@@ -34,21 +35,13 @@ class SearchCompanies extends StatelessWidget {
                     elevation: 10,
                     borderOnForeground: true,
                     child: ListTile(
-                      onTap: (){
-                        showDialog<String>(context: context, builder: (BuildContext context)=> AlertDialog(
-                          title: const Text('getPlaced',style: TextStyle(
-                            color: Colors.lightBlue,
-                          ),),
-                          content: Text('${data.docs[index]['Company Name']}', style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),),
-                          actions: <Widget>[
-                            TextButton(onPressed: (){return Navigator.pop(context,'OK');}, child: const Text('OK')),
-                          ],
-
-                        )
-                        );
-
+                      onTap: () {
+                        var companyName = data.docs[index]['Company Name'];
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ReviewsByCompany(
+                                    companyName: companyName)));
                       },
                       textColor: Colors.lightBlue,
                       dense: true,
@@ -85,10 +78,11 @@ class SearchCompanies extends StatelessWidget {
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text(
+                      child: Card(
+                          child: Text(
                         '${data.companyName}',
                         style: Theme.of(context).textTheme.headline6,
-                      ),
+                      )),
                     ),
                   ],
                 );

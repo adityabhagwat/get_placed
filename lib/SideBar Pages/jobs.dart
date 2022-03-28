@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
 import 'package:get_placed/Job/job_details.dart';
-
 
 class JobsPage extends StatelessWidget {
   final CollectionReference _firebaseFirestore = FirebaseFirestore.instance.collection('joblist');
@@ -156,7 +155,7 @@ class Jobs extends SearchDelegate{
   @override
   Widget buildSuggestions(BuildContext context) {
     // TODO: implement buildSuggestions
-    return Center(child: Text('Search Jobs'));
+    return const Center(child: Text('Search Jobs by Company Name'));
     throw UnimplementedError();
   }
   

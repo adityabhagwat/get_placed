@@ -1,8 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get_placed/Reviews/reviews_const.dart';
-import 'package:get_placed/Reviews/reviews_list.dart';
 import 'package:get_placed/side_nav.dart';
 
 
@@ -136,11 +134,13 @@ class _UserHomeState extends State<UserHome> {
                                             ),
                                             ),
                                             const TextSpan(text: "\n"),
-                                            const TextSpan(text: "Questions Asked : ", style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              fontStyle: FontStyle.italic,
-                                              color: Colors.black,)
-                                            ),
+                                            const TextSpan(
+                                    text: "Topic to Prepare: ",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontStyle: FontStyle.italic,
+                                      color: Colors.black,
+                                    )),
                                             TextSpan(text: '${data.docs[index]['Questions']}', style: const TextStyle(
                                               color: Colors.black,
                                               fontSize: 18,

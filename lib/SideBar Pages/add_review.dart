@@ -1,4 +1,3 @@
-import 'dart:ffi';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
@@ -130,13 +129,13 @@ class _AddReviewState extends State<AddReview> {
                         // Call the user's CollectionReference to add a new user
                         return reviews
                             .add({
-                          "Company Name": companyName,
-                          "Designation": designation,
-                          "No of Rounds":noRounds,
-                          "Procedure":procedure,
-                          "Questions":questions,
-                          "Salary Package":salary
-                        })
+                              "Company Name": companyName?.toLowerCase(),
+                              "Designation": designation?.toLowerCase(),
+                              "No of Rounds": noRounds,
+                              "Procedure": procedure,
+                              "Questions": questions,
+                              "Salary Package": salary
+                            })
                             .then((value) => print("Review Added"))
                             .catchError((error) => print("Failed to add Review: $error"));
                       }

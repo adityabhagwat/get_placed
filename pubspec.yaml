@@ -52,6 +52,7 @@ dependencies:
   google_fonts: ^2.2.0
 
   image_picker: ^0.8.4+10
+  file_picker: ^4.5.1
   firestore_search: ^0.1.9
   url_launcher: ^6.0.20
 

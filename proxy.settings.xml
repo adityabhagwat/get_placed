@@ -1,0 +1,9 @@
+<application>
+  <component name="HttpConfigurable">
+    <option name="PROXY_HOST" value="DPU_STUD" />
+    <option name="PROXY_AUTHENTICATION" value="true" />
+    <option name="KEEP_PROXY_PASSWORD" value="true" />
+    <option name="USE_PAC_URL" value="true" />
+    <option name="PAC_URL" value="http://10.30.73.144/student.pac" />
+  </component>
+</application>

@@ -3,29 +3,30 @@
     <property name="created">2022-01-27T19:52:36</property>
     <property name="ide">AndroidStudio</property>
     <property name="ideVersion">2021.1.1.20</property>
-    <property name="modified">2022-03-17T20:04:38</property>
+    <property name="modified">2022-05-03T13:38:25</property>
     <property name="originalScheme">Darcula</property>
   </metaInfo>
   <colors>
     <option name="FILESTATUS_ADDED" value="c3e887" />
-    <option name="FILESTATUS_COPIED" value="85e89d" />
+    <option name="FILESTATUS_COPIED" value="addb67" />
     <option name="FILESTATUS_DELETED" value="f77669" />
     <option name="FILESTATUS_HIJACKED" value="ffcb6b" />
-    <option name="FILESTATUS_IDEA_FILESTATUS_DELETED_FROM_FILE_SYSTEM" value="959da5" />
-    <option name="FILESTATUS_IDEA_FILESTATUS_IGNORED" value="dbedff" />
-    <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_BOTH_CONFLICTS" value="f97583" />
-    <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_CONFLICTS" value="f97583" />
-    <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_PROPERTY_CONFLICTS" value="f97583" />
-    <option name="FILESTATUS_MERGED" value="b392f0" />
+    <option name="FILESTATUS_IDEA_FILESTATUS_DELETED_FROM_FILE_SYSTEM" value="ef5350" />
+    <option name="FILESTATUS_IDEA_FILESTATUS_IGNORED" value="637777" />
+    <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_BOTH_CONFLICTS" value="f78c6c" />
+    <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_CONFLICTS" value="f78c6c" />
+    <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_PROPERTY_CONFLICTS" value="f78c6c" />
+    <option name="FILESTATUS_MERGED" value="82aaff" />
     <option name="FILESTATUS_MODIFIED" value="80cbc4" />
     <option name="FILESTATUS_NOT_CHANGED_IMMEDIATE" value="80cbc4" />
     <option name="FILESTATUS_NOT_CHANGED_RECURSIVE" value="80cbc4" />
     <option name="FILESTATUS_OBSOLETE" value="ffcb6b" />
+    <option name="FILESTATUS_RENAMED" value="c792ea" />
     <option name="FILESTATUS_SUPPRESSED" value="546e7a" />
     <option name="FILESTATUS_SWITCHED" value="f77669" />
     <option name="FILESTATUS_UNKNOWN" value="f77669" />
-    <option name="FILESTATUS_addedOutside" value="ffea7f" />
-    <option name="FILESTATUS_changelistConflict" value="f97583" />
-    <option name="FILESTATUS_modifiedOutside" value="b392f0" />
+    <option name="FILESTATUS_addedOutside" value="7fdbca" />
+    <option name="FILESTATUS_changelistConflict" value="f78c6c" />
+    <option name="FILESTATUS_modifiedOutside" value="82aaff" />
   </colors>
 </scheme>

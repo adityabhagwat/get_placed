@@ -39,7 +39,7 @@ class _AddStudyMaterialState extends State<AddStudyMaterial> {
               Form(
                   child: Column(
                 children: [
-                  TextField(
+                  TextFormField(
                     decoration: const InputDecoration(
                       hintText: 'Enter Topic Name',
                       border: OutlineInputBorder(
@@ -51,11 +51,16 @@ class _AddStudyMaterialState extends State<AddStudyMaterial> {
                     onChanged: (value) {
                       topicName = value;
                     },
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Enter Topic Name';
+                      }
+                    },
                   ),
                   const SizedBox(
                     height: 10,
                   ),
-                  TextField(
+                  TextFormField(
                     decoration: const InputDecoration(
                       hintText: 'Paste Study Material Link',
                       border: OutlineInputBorder(
@@ -66,6 +71,11 @@ class _AddStudyMaterialState extends State<AddStudyMaterial> {
                     ),
                     onChanged: (value) {
                       materialLink = value;
+                    },
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Enter Link';
+                      }
                     },
                   ),
                   SizedBox(
@@ -133,7 +143,7 @@ class _AddStudyMaterialState extends State<AddStudyMaterial> {
               Form(
                   child: Column(
                 children: [
-                  TextField(
+                  TextFormField(
                     decoration: const InputDecoration(
                       hintText: 'Enter Topic Name',
                       border: OutlineInputBorder(
@@ -144,6 +154,11 @@ class _AddStudyMaterialState extends State<AddStudyMaterial> {
                     ),
                     onChanged: (value) {
                       topicName = value;
+                    },
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Enter Topic Name';
+                      }
                     },
                   ),
                   SizedBox(

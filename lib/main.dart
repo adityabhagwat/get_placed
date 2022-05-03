@@ -1,23 +1,22 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
 import 'package:get_placed/Search%20Pages/companies.dart';
 import 'package:get_placed/SideBar%20Pages/add_review.dart';
 import 'package:get_placed/SideBar%20Pages/jobs.dart';
 import 'package:get_placed/SideBar%20Pages/manage_profile.dart';
 import 'package:get_placed/SideBar%20Pages/saved.dart';
 import 'package:get_placed/SideBar%20Pages/study_material.dart';
+import 'package:get_placed/SideBar%20Pages/user_home.dart';
 import 'package:get_placed/Study%20Materials/add_study_material.dart';
 import 'package:get_placed/homepage.dart';
-import 'package:get_placed/login_page.dart';
 import 'package:get_placed/provider/email_Authentication.dart';
 import 'package:get_placed/provider/google_sign_in.dart';
-import 'package:get_placed/registration_form.dart';
-import 'package:get_placed/SideBar%20Pages/user_home.dart';
 import 'package:get_placed/search_page.dart';
 import 'package:provider/provider.dart';
 
 import 'Job/add_jobs.dart';
+import 'Search Pages/designation.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -51,17 +50,18 @@ class MyApp extends StatelessWidget {
             home: const SplashScreen(),
             initialRoute: '/',
             routes: {
-              '/UserHome' : (context) => const UserHome(),
-              '/Saved':(context) => const SavedContent(),
-              '/ManageProfile':(context) => const ManageProfile(),
-              '/Add Review':(context)=> const AddReview(),
-              '/Search Page':(context)=>const SearchPage(),
-              '/Company Page':(context)=>const SearchCompanies(),
-              '/Jobs Page':(context)=>  JobsPage(),
-              '/Study Material Page':(context) => const StudyMaterialPage(),
-              '/Add Jobs':(context)=>const AddJobsList(),
-              '/Add Study Material':(context)=> const AddStudyMaterial(),
-            },
+          '/UserHome': (context) => const UserHome(),
+          '/Saved': (context) => const SavedContent(),
+          '/ManageProfile': (context) => const ManageProfile(),
+          '/Add Review': (context) => const AddReview(),
+          '/Search Page': (context) => const SearchPage(),
+          '/Jobs Page': (context) => JobsPage(),
+          '/Study Material Page': (context) => const StudyMaterialPage(),
+          '/Add Jobs': (context) => const AddJobsList(),
+          '/Add Study Material': (context) => const AddStudyMaterial(),
+          '/Search Companies': (context) => const SearchCompanies(),
+          '/Search Designations': (context) => const SearchDesignation(),
+        },
           ),
       );
 }

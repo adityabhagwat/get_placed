@@ -52,14 +52,14 @@ class _StudyMaterialPageState extends State<StudyMaterialPage> {
                 children: [
                   ...snapshot.data!.docs
                       .map((QueryDocumentSnapshot<Object?> data) {
-                    final String topic = data['Topic'];
-                    final String link = data['link'];
+                    final String? topic = data['Topic'];
+                    final String? link = data['link'];
 
                     return Card(
                       elevation: 5,
                       child: ListTile(
                         title: Text(
-                          "Topic : " + topic,
+                          "Topic : " + topic!,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
@@ -67,7 +67,7 @@ class _StudyMaterialPageState extends State<StudyMaterialPage> {
                         ),
                         subtitle: TextButton(
                           onPressed: () {
-                            launch(link);
+                            launch(link!);
                           },
                           child: const Text(
                             'Go to Content',
@@ -146,14 +146,14 @@ class SearchMaterial extends SearchDelegate {
                               .toLowerCase()
                               .contains(query.toLowerCase()))
                       .map((QueryDocumentSnapshot<Object?> data) {
-                    final String topicName = data['Topic'];
-                    final String link = data['link'];
+                    final String? topicName = data['Topic'];
+                    final String? link = data['link'];
 
                     return Card(
                       elevation: 5,
                       child: ListTile(
                         title: Text(
-                          "Topic : " + topicName,
+                          "Topic : " + topicName!,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
@@ -161,7 +161,7 @@ class SearchMaterial extends SearchDelegate {
                         ),
                         subtitle: TextButton(
                             onPressed: () {
-                              launch(link);
+                              launch(link!);
                             },
                             child: const Text(
                               'Go to Content',

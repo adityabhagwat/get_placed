@@ -2,29 +2,29 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get_placed/side_nav.dart';
 
-class SearchCompanies extends StatefulWidget {
-  const SearchCompanies({Key? key}) : super(key: key);
+class SearchDesignation extends StatefulWidget {
+  const SearchDesignation({Key? key}) : super(key: key);
 
   @override
-  _SearchCompanies createState() => _SearchCompanies();
+  _SearchDesignation createState() => _SearchDesignation();
 }
 
-class _SearchCompanies extends State<SearchCompanies> {
+class _SearchDesignation extends State<SearchDesignation> {
   final CollectionReference _firebaseFirestore =
-      FirebaseFirestore.instance.collection('Companies');
+      FirebaseFirestore.instance.collection('Designations');
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: NavBar(),
       appBar: AppBar(
-        title: Text('Companies'),
+        title: Text('Designations'),
         actions: <Widget>[
           IconButton(
               onPressed: () {
                 showSearch(
                   context: context,
-                  delegate: SearchCompany(),
+                  delegate: SearchDesgs(),
                 );
               },
               icon: Icon(Icons.search)),
@@ -47,6 +47,9 @@ class _SearchCompanies extends State<SearchCompanies> {
                   ...snapshot.data!.docs
                       .map((QueryDocumentSnapshot<Object?> data) {
                     final String? companyName = data['Company Name'];
+                    final String? designation = data['Designation'];
+                    final String? salaryPackage =
+                        data['Salary Package'].toString();
 
                     return Card(
                       elevation: 5,
@@ -68,6 +71,38 @@ class _SearchCompanies extends State<SearchCompanies> {
                               fontSize: 20,
                             ),
                           ),
+                          const TextSpan(text: "\n"),
+                          const TextSpan(
+                              text: "Designation : ",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontStyle: FontStyle.italic,
+                                color: Colors.black,
+                              )),
+                          TextSpan(
+                            text: '$designation',
+                            style: const TextStyle(
+                              fontStyle: FontStyle.italic,
+                              color: Colors.blue,
+                              fontSize: 18,
+                            ),
+                          ),
+                          const TextSpan(text: "\n"),
+                          const TextSpan(
+                              text: "Salary : ",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontStyle: FontStyle.italic,
+                                color: Colors.black,
+                              )),
+                          TextSpan(
+                            text: '$salaryPackage',
+                            style: const TextStyle(
+                              fontStyle: FontStyle.italic,
+                              color: Colors.green,
+                              fontSize: 16,
+                            ),
+                          ),
                         ])),
                       ),
                     );
@@ -82,9 +117,9 @@ class _SearchCompanies extends State<SearchCompanies> {
   }
 }
 
-class SearchCompany extends SearchDelegate {
+class SearchDesgs extends SearchDelegate {
   final CollectionReference _firebaseFirestore =
-      FirebaseFirestore.instance.collection('Companies');
+      FirebaseFirestore.instance.collection('Designations');
 
   @override
   List<Widget>? buildActions(BuildContext context) {
@@ -119,7 +154,7 @@ class SearchCompany extends SearchDelegate {
           } else {
             if (snapshot.data!.docs
                 .where((QueryDocumentSnapshot<Object?> element) =>
-                    element['Company Name']
+                    element['Designation']
                         .toString()
                         .toLowerCase()
                         .contains(query.toLowerCase()))
@@ -132,12 +167,15 @@ class SearchCompany extends SearchDelegate {
                 children: [
                   ...snapshot.data!.docs
                       .where((QueryDocumentSnapshot<Object?> element) =>
-                          element['Company Name']
+                          element['Designation']
                               .toString()
                               .toLowerCase()
                               .contains(query.toLowerCase()))
                       .map((QueryDocumentSnapshot<Object?> data) {
                     final String? companyName = data['Company Name'];
+                    final String? designation = data['Designation'];
+                    final String? salaryPackage =
+                        data['Salary Package'].toString();
 
                     return Card(
                       elevation: 5,
@@ -159,6 +197,38 @@ class SearchCompany extends SearchDelegate {
                               fontSize: 20,
                             ),
                           ),
+                          const TextSpan(text: "\n"),
+                          const TextSpan(
+                              text: "Designation : ",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontStyle: FontStyle.italic,
+                                color: Colors.black,
+                              )),
+                          TextSpan(
+                            text: '$designation',
+                            style: const TextStyle(
+                              fontStyle: FontStyle.italic,
+                              color: Colors.blue,
+                              fontSize: 18,
+                            ),
+                          ),
+                          const TextSpan(text: "\n"),
+                          const TextSpan(
+                              text: "Salary : ",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontStyle: FontStyle.italic,
+                                color: Colors.black,
+                              )),
+                          TextSpan(
+                            text: '$salaryPackage',
+                            style: const TextStyle(
+                              fontStyle: FontStyle.italic,
+                              color: Colors.green,
+                              fontSize: 16,
+                            ),
+                          ),
                         ])),
                       ),
                     );
@@ -172,6 +242,6 @@ class SearchCompany extends SearchDelegate {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    return const Center(child: Text('Search by Company Name'));
+    return const Center(child: Text('Search by Designation Name'));
   }
 }

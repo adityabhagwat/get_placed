@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_placed/provider/email_Authentication.dart';
 import 'package:get_placed/provider/google_sign_in.dart';
-import 'package:get_placed/provider/user.dart';
 import 'package:provider/provider.dart';
 
 class NavBar extends StatefulWidget {
@@ -72,6 +71,13 @@ class _NavBarState extends State<NavBar> {
           ),
           ListTile(
             leading: Icon(Icons.badge),
+            title: Text('Designations'),
+            onTap: () {
+              Navigator.pushNamed(context, '/Search Designations');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.work),
             title: Text('Jobs'),
             onTap: () {
               Navigator.pushNamed(context, '/Jobs Page');

@@ -15,18 +15,20 @@ class ReviewsByCompany extends StatelessWidget {
       appBar: AppBar(
         title: Text('getPlaced'),
       ),
-      /*body: Container(
+      body: Container(
         padding: EdgeInsets.all(5.0),
         margin: EdgeInsets.all(10.0),
         child: StreamBuilder<QuerySnapshot>(
-          stream: _firebaseFirestore.where('Company Name',isEqualTo:companyName.toLowerCase()).snapshots(),
-          builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot){
-            if(!snapshot.hasData){
+          stream: _firebaseFirestore
+              .where('Company Name', isEqualTo: companyName.toLowerCase())
+              .snapshots(),
+          builder:
+              (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+            if (!snapshot.hasData) {
               return const Center(
                 child: CircularProgressIndicator(),
               );
-            }
-            else{
+            } else{
               return ListView(
                 children: [
                   ...snapshot.data!.docs.map((QueryDocumentSnapshot<Object?> data) {
@@ -103,9 +105,7 @@ class ReviewsByCompany extends StatelessWidget {
                                     fontSize: 16,
                                   ),
                                   ),
-                                ]
-                            )
-                        ),
+                                ])),
                       ),
                     );
                   })
@@ -114,7 +114,7 @@ class ReviewsByCompany extends StatelessWidget {
             }
           },
         ),
-      ),*/
+      ),
     );
   }
 }

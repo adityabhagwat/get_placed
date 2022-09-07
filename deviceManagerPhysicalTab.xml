@@ -4,6 +4,17 @@
       <PhysicalDevice>
         <key>
           <Key>
+            <type value="SERIAL_NUMBER" />
+            <value value="fdd275d0" />
+          </Key>
+        </key>
+        <name value="OnePlus AC2001" />
+        <target value="Android 12.0" />
+        <api value="31" />
+      </PhysicalDevice>
+      <PhysicalDevice>
+        <key>
+          <Key>
             <type value="DOMAIN_NAME" />
             <value value="adb-e78fdabb-7sEFgP._adb-tls-connect._tcp" />
           </Key>
